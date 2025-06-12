@@ -3,7 +3,7 @@ import tempfile
 from evaluate.pronunciation import pronunciation_score
 from evaluate.grammar import correct_grammar
 from evaluate.readability import evaluate_text_level
-from streamlit_audiorecorder import audiorecorder
+from audiorecorder import audiorecorder
 
 
 def main():
