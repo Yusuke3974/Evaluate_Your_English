@@ -14,6 +14,14 @@ The application is built with **Streamlit** and relies on the following librarie
 
 ## Setup
 
+Install the dependencies using [Poetry](https://python-poetry.org):
+
+```bash
+poetry install
+```
+
+If you prefer using `pip`, an exported `requirements.txt` is also provided:
+
 ```bash
 pip install -r requirements.txt
 ```
