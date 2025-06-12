@@ -5,21 +5,23 @@ from evaluate.grammar import correct_grammar
 from evaluate.readability import evaluate_text_level
 from audiorecorder import audiorecorder
 
-import streamlit.watcher.local_sources_watcher as lsw
+try:
+    import streamlit.watcher.local_sources_watcher as lsw
 
-_orig_extract_paths = lsw.extract_paths
+    if hasattr(lsw, "extract_paths"):
+        _orig_extract_paths = lsw.extract_paths
 
+        def _safe_extract_paths(module):
+            if getattr(module, "__name__", "") == "torch.classes":
+                return []
+            try:
+                return _orig_extract_paths(module)
+            except RuntimeError:
+                return []
 
-def _safe_extract_paths(module):
-    if getattr(module, "__name__", "") == "torch.classes":
-        return []
-    try:
-        return _orig_extract_paths(module)
-    except RuntimeError:
-        return []
-
-
-lsw.extract_paths = _safe_extract_paths
+        lsw.extract_paths = _safe_extract_paths
+except (ImportError, AttributeError):
+    pass
 
 
 def main():

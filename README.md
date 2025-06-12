@@ -37,8 +37,10 @@ streamlit run app.py
 ```
 
 If you encounter errors related to `torch.classes` when launching the
-app, note that `app.py` patches Streamlit's file watcher to skip this
-module. This workaround avoids a startup crash caused by
+app, `app.py` attempts to patch Streamlit's file watcher to skip this
+module. The patch is optional and is automatically skipped when the
+watcher implementation doesn't expose the required hook. This
+workaround avoids a startup crash caused by
 `streamlit.watcher.local_sources_watcher` failing on
 `torch.classes`.
 ## Text Level Assessment
