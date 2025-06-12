@@ -1,4 +1,3 @@
-import subprocess
 from phonemizer import phonemize
 from faster_whisper import WhisperModel
 
@@ -25,7 +24,6 @@ def pronunciation_score(audio_path: str, reference_text: str, model_size="base")
     pred_tokens = pred_phonemes.split()
 
     # simple edit distance
-    import numpy as np
     import editdistance
 
     distance = editdistance.eval(ref_tokens, pred_tokens)
