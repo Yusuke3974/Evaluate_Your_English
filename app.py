@@ -2,7 +2,10 @@ import streamlit as st
 import tempfile
 from evaluate.pronunciation import pronunciation_score
 from evaluate.grammar import correct_grammar
-from streamlit_audiorecorder import audiorecorder
+# The audiorecorder package installs with the name ``audiorecorder``
+# even though the PyPI package is ``streamlit-audiorecorder``. Import
+# the function from the correct module to avoid ModuleNotFoundError.
+from audiorecorder import audiorecorder
 
 
 def main():
