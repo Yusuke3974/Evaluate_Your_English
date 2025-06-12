@@ -24,3 +24,11 @@ streamlit run app.py
 ```
 
 Upload an audio file (wav/mp3/m4a) and, optionally, a reference text. The app will output a pronunciation score and grammar correction suggestions.
+
+## Running Tests
+
+Run the unit tests with **pytest**:
+
+```bash
+pytest
+```
