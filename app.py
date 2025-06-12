@@ -2,9 +2,7 @@ import streamlit as st
 import tempfile
 from evaluate.pronunciation import pronunciation_score
 from evaluate.grammar import correct_grammar
-# The audiorecorder package installs with the name ``audiorecorder``
-# even though the PyPI package is ``streamlit-audiorecorder``. Import
-# the function from the correct module to avoid ModuleNotFoundError.
+from evaluate.readability import evaluate_text_level
 from audiorecorder import audiorecorder
 
 import streamlit.watcher.local_sources_watcher as lsw
@@ -63,6 +61,18 @@ def main():
         if transcription:
             st.write("Grammar Correction:")
             st.write(transcription)
+
+
+    st.header("Text Level Assessment")
+    input_text = st.text_area("Enter text to evaluate")
+    if st.button("Evaluate Text Level") and input_text:
+        readability = evaluate_text_level(input_text)
+        st.write(
+            f"Flesch Reading Ease: {readability['flesch_reading_ease']:.2f}"
+        )
+        st.write(
+            f"Flesch-Kincaid Grade: {readability['flesch_kincaid_grade']:.2f}"
+        )
 
 
 if __name__ == "__main__":
