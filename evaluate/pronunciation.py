@@ -1,7 +1,9 @@
 from phonemizer import phonemize
 from faster_whisper import WhisperModel
+from functools import lru_cache
 
 
+@lru_cache(maxsize=None)
 def load_whisper_model(model_size="base"):
     """Load a Whisper ASR model."""
     return WhisperModel(model_size)

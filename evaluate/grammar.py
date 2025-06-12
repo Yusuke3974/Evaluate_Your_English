@@ -1,9 +1,11 @@
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 import torch
+from functools import lru_cache
 
 MODEL_NAME = "prithivida/grammar_error_correcter_v1"
 
 
+@lru_cache(maxsize=1)
 def load_model():
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
     model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME)
