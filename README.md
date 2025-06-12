@@ -31,5 +31,3 @@ pip install -r requirements.txt
 ```bash
 streamlit run app.py
 ```
-
-Upload an audio file (wav/mp3/m4a) or record audio with your microphone. Optionally provide a reference text. The app will output a pronunciation score and grammar correction suggestions.
