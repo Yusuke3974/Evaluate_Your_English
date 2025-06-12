@@ -10,6 +10,7 @@ The application is built with **Streamlit** and relies on the following librarie
 - `faster-whisper` for speech to text
 - `phonemizer` and `editdistance` for pronunciation scoring
 - `transformers` and `torch` for grammar correction
+- `streamlit-audiorecorder` for microphone input
 
 ## Setup
 
@@ -23,4 +24,4 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Upload an audio file (wav/mp3/m4a) and, optionally, a reference text. The app will output a pronunciation score and grammar correction suggestions.
+Upload an audio file (wav/mp3/m4a) or record audio with your microphone. Optionally provide a reference text. The app will output a pronunciation score and grammar correction suggestions.
