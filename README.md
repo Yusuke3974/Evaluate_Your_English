@@ -1,9 +1,10 @@
 # Evaluate Your English
 
-This app provides two core features:
+This app provides three core features:
 
 1. **English Pronunciation Evaluation** using a Whisper ASR model and phoneme comparison.
 2. **English Grammar Correction** using a transformer model.
+3. **English Text Level Assessment** based on Flesch readability metrics. This feature works on any text input, independent of the audio tools.
 
 Both the grammar and pronunciation models are cached so they only load once per
 process. This significantly speeds up repeated evaluations.
@@ -34,3 +35,8 @@ pip install -r requirements.txt
 ```bash
 streamlit run app.py
 ```
+
+## Text Level Assessment
+
+Use the dedicated text box in the app to evaluate the readability of any text.
+The results display Flesch Reading Ease and Flesch–Kincaid Grade Level.
