@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "evaluate-your-english"
+version = "0.1.0"
+description = "Streamlit app for English pronunciation and grammar evaluation"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+streamlit = "*"
+faster-whisper = "*"
+phonemizer = "*"
+editdistance = "*"
+transformers = "*"
+torch = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
