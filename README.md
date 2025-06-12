@@ -5,6 +5,9 @@ This app provides two core features:
 1. **English Pronunciation Evaluation** using a Whisper ASR model and phoneme comparison.
 2. **English Grammar Correction** using a transformer model.
 
+Both the grammar and pronunciation models are cached so they only load once per
+process. This significantly speeds up repeated evaluations.
+
 The application is built with **Streamlit** and relies on the following libraries:
 
 - `faster-whisper` for speech to text
