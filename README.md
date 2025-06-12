@@ -10,8 +10,17 @@ The application is built with **Streamlit** and relies on the following librarie
 - `faster-whisper` for speech to text
 - `phonemizer` and `editdistance` for pronunciation scoring
 - `transformers` and `torch` for grammar correction
+- `streamlit-audiorecorder` for microphone input
 
 ## Setup
+
+Install the dependencies using [Poetry](https://python-poetry.org):
+
+```bash
+poetry install
+```
+
+If you prefer using `pip`, an exported `requirements.txt` is also provided:
 
 ```bash
 pip install -r requirements.txt
@@ -21,14 +30,4 @@ pip install -r requirements.txt
 
 ```bash
 streamlit run app.py
-```
-
-Upload an audio file (wav/mp3/m4a) and, optionally, a reference text. The app will output a pronunciation score and grammar correction suggestions.
-
-## Running Tests
-
-Run the unit tests with **pytest**:
-
-```bash
-pytest
 ```

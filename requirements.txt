@@ -4,3 +4,4 @@ phonemizer
 editdistance
 transformers
 torch
+streamlit-audiorecorder
