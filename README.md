@@ -24,3 +24,7 @@ streamlit run app.py
 ```
 
 Upload an audio file (wav/mp3/m4a) and, optionally, a reference text. The app will output a pronunciation score and grammar correction suggestions.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
